@@ -25,7 +25,7 @@ cdparanoia -r -z -O {drive_sample_offset} -B 1- ./
 flac -o "01 - pcm.flac" -V --force-raw-format --endian little --sign signed --channels 2 --bps 16 --sample-rate 44100 ./track01.cdda.raw
 
 
-
+flac ./01\ -\ Sword\ from\ the\ Stone\ \(Radio\ 2\ House\ Music\ Show\).flac -T TITLE="Sword from the Stone (Radio 2 House Music Show)" -T ALBUM="Sword from the Stone (Radio 2 House Music Show)" -T TRACKNUMBER=01 -T ARTIST="Passenger" --tag-from-file LYRICS=./01\ -\ Sword\ from\ the\ Stone\ \(Radio\ 2\ House\ Music\ Show\).lrc --no-padding -o bananas.flac
 
 
 
