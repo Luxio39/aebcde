@@ -1,0 +1,42 @@
+flac -o "01 - test.flac" -V -T title=test -T album_artist=testalbumartist Track\ 1.wav
+
+
+cdparanoia -w -z -B 1- ./
+
+flac -o "01 - wav.flac" -V ./track01.cdda.wav
+
+
+cdparanoia -R -z -B 1- ./
+
+flac -o "01 - pcm.flac" -V --force-raw-format --endian big --sign signed --channels 2 --bps 16 --sample-rate 44100 ./track01.cdda.raw
+
+
+
+cdparanoia -R -z --sample-offset {drive_offset} -B {track_number} ./{track number}
+
+
+
+(cd's are encoded little endian | maybe I should change this to little endian)
+
+final commands:
+
+cdparanoia -r -z -O {drive_sample_offset} -B 1- ./
+
+flac -o "01 - pcm.flac" -V --force-raw-format --endian little --sign signed --channels 2 --bps 16 --sample-rate 44100 ./track01.cdda.raw
+
+
+
+
+
+
+MediaTek Inc. Samsung SE-S084 Super WriteMaster Slim External DVD writer
+
+TSSTcorp - CDDVDW SE-S084B 	+6 	283 	100%
+TSSTcorp - CDDVDW SE-S084C 	+6 	776 	100%
+TSSTcorp - CDDVDW SE-S084D 	+6 	369 	100%
+TSSTcorp - CDDVDW SE-S084F 	+6 	551 	100%
+
+
+Asus BW-16D1HT
+
+ASUS - BW-16D1HT 	+6 	1295 	100%
